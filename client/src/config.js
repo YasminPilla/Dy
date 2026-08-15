@@ -1,7 +1,7 @@
 // Configurações editáveis do site
 export const config = {
   empresa: "Dy Assistent",
-  whatsapp: "55XXXXXXXXXXX", // formato: 55 + DDD + número
+  whatsapp: "5511964918084", // formato: 55 + DDD + número — usado nos contatos gerais do site
   whatsappMsg:
     "Olá, gostaria de conhecer melhor o trabalho da Dy Assistent e conversar sobre uma oportunidade.",
   email: "[E-MAIL DA EMPRESA]",
@@ -12,12 +12,14 @@ export const config = {
       cargo: "Sócio · Diretor",
       bio: "[EXPERIÊNCIA, SETORES E PRINCIPAIS COMPETÊNCIAS — 2 a 3 linhas.]",
       foto: null, // ex.: "/socio1.jpg" (coloque a imagem em client/public)
+      whatsapp: "5511964918084",
     },
     {
       nome: "Diogo Zura",
       cargo: "Sócio · Diretor",
       bio: "[EXPERIÊNCIA, SETORES E PRINCIPAIS COMPETÊNCIAS — 2 a 3 linhas.]",
       foto: null,
+      whatsapp: "5511991249136",
     },
   ],
   credibilidade: [
@@ -27,5 +29,5 @@ export const config = {
   ],
 };
 
-export const waLink = () =>
-  `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(config.whatsappMsg)}`;
+export const waLink = (numero = config.whatsapp) =>
+  `https://wa.me/${numero}?text=${encodeURIComponent(config.whatsappMsg)}`;

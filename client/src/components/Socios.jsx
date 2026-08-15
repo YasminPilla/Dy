@@ -1,4 +1,4 @@
-import { config } from "../config.js";
+import { config, waLink } from "../config.js";
 import { useReveal } from "../hooks/useReveal.js";
 
 export default function Socios() {
@@ -24,6 +24,11 @@ export default function Socios() {
                 <h3>{s.nome}</h3>
                 <p className="cargo">{s.cargo}</p>
                 <p>{s.bio}</p>
+                {s.whatsapp && (
+                  <a className="socio-wa" href={waLink(s.whatsapp)} target="_blank" rel="noopener noreferrer">
+                    Falar com {s.nome.split(" ")[0]} no WhatsApp
+                  </a>
+                )}
               </div>
             </article>
           ))}

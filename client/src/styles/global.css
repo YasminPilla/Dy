@@ -272,6 +272,17 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
 .socios-grid article:hover .porta-info h3{color:var(--blue-2)}
 .porta-info .cargo{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin:6px 0 10px}
 .porta-info p{color:var(--muted);font-size:14px}
+.socio-wa{
+  position:relative;display:inline-block;margin-top:14px;
+  font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--text);
+  border-bottom:1px solid var(--blue);transition:color .3s,padding-right .3s;
+}
+.socio-wa:hover{color:var(--blue-2);padding-right:20px}
+.socio-wa::after{
+  content:"→";position:absolute;right:0;top:0;opacity:0;
+  transition:opacity .3s,transform .3s;transform:translateX(-6px);
+}
+.socio-wa:hover::after{opacity:1;transform:translateX(4px)}
 .cred-row{
   display:grid;grid-template-columns:180px 1fr;gap:12px clamp(24px,4vw,56px);
   padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline;
