@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CircleButton from "./CircleButton.jsx";
-import { config, waLink } from "../config.js";
+import { config, waLink, whatsappGeral } from "../config.js";
 import { useReveal } from "../hooks/useReveal.js";
 
 const INITIAL = { nome: "", empresa: "", email: "", whatsapp: "", tipo: "", descricao: "" };
@@ -36,7 +36,7 @@ export default function Contato() {
     setInvalid(errors);
     if (errors.length) return;
 
-    const link = waLink(config.whatsapp, montarMensagem(form));
+    const link = waLink(whatsappGeral, montarMensagem(form));
     setWaHref(link);
     window.open(link, "_blank", "noopener,noreferrer");
   }

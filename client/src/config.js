@@ -1,7 +1,6 @@
 // Configurações editáveis do site
 export const config = {
   empresa: "Dy Assistent",
-  whatsapp: "5511939617574", // formato: 55 + DDD + número — usado nos contatos gerais do site
   whatsappMsg:
     "Olá, gostaria de conhecer melhor o trabalho da Dy Assistent e conversar sobre uma oportunidade.",
   email: "[E-MAIL DA EMPRESA]",
@@ -29,5 +28,11 @@ export const config = {
   ],
 };
 
-export const waLink = (numero = config.whatsapp, mensagem = config.whatsappMsg) =>
+// Sorteia um sócio por visita para os contatos gerais do site (botão flutuante,
+// rodapé, "Falar com um sócio" e o formulário), assim os contatos não caem sempre
+// na mesma pessoa.
+const socioContatoGeral = config.socios[Math.floor(Math.random() * config.socios.length)];
+export const whatsappGeral = socioContatoGeral.whatsapp;
+
+export const waLink = (numero = whatsappGeral, mensagem = config.whatsappMsg) =>
   `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
