@@ -1,0 +1,32 @@
+import CircleButton from "./CircleButton.jsx";
+import { useReveal } from "../hooks/useReveal.js";
+
+export default function Hero() {
+  const ref = useReveal();
+  return (
+    <section className="hero" id="inicio" ref={ref}>
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="hero-corners" aria-hidden="true">
+        <span /><span /><span /><span />
+      </div>
+      <div className="wrap hero-in">
+        <span className="label reveal">Consultoria empresarial estratégica</span>
+        <h1 className="reveal" style={{ transitionDelay: ".1s" }}>
+          Entramos onde sua empresa <em>precisa chegar</em>.
+        </h1>
+        <p className="reveal" style={{ transitionDelay: ".2s" }}>
+          Acesso a clientes, negociações e relacionamentos estratégicos — da primeira
+          conversa ao acordo.
+        </p>
+        <div className="hero-ctas reveal" style={{ transitionDelay: ".3s" }}>
+          <CircleButton href="#contato" variant="blue">Agendar uma conversa</CircleButton>
+          <CircleButton href="#atuacao" direction="down">Nossa atuação</CircleButton>
+        </div>
+        <div className="hero-tags reveal" style={{ transitionDelay: ".4s" }}>
+          <span>Estratégia</span><span>Relacionamento</span>
+          <span>Negociação</span><span>Confidencialidade</span>
+        </div>
+      </div>
+    </section>
+  );
+}

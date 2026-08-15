@@ -1,0 +1,31 @@
+// Configurações editáveis do site
+export const config = {
+  empresa: "Dy Assistent",
+  whatsapp: "55XXXXXXXXXXX", // formato: 55 + DDD + número
+  whatsappMsg:
+    "Olá, gostaria de conhecer melhor o trabalho da Dy Assistent e conversar sobre uma oportunidade.",
+  email: "[E-MAIL DA EMPRESA]",
+  linkedin: "", // ex.: "https://www.linkedin.com/company/..." — deixe vazio para ocultar o link
+  socios: [
+    {
+      nome: "Yasmin Pilla",
+      cargo: "Sócio · Diretor",
+      bio: "[EXPERIÊNCIA, SETORES E PRINCIPAIS COMPETÊNCIAS — 2 a 3 linhas.]",
+      foto: null, // ex.: "/socio1.jpg" (coloque a imagem em client/public)
+    },
+    {
+      nome: "Diogo Zura",
+      cargo: "Sócio · Diretor",
+      bio: "[EXPERIÊNCIA, SETORES E PRINCIPAIS COMPETÊNCIAS — 2 a 3 linhas.]",
+      foto: null,
+    },
+  ],
+  credibilidade: [
+    { k: "Setores", v: "[SETORES COM EXPERIÊNCIA E RELACIONAMENTO]" },
+    { k: "Experiência", v: "[ANOS DE EXPERIÊNCIA E TRAJETÓRIAS]" },
+    { k: "Mercados", v: "[MERCADOS E REGIÕES DE ATUAÇÃO]" },
+  ],
+};
+
+export const waLink = () =>
+  `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(config.whatsappMsg)}`;
