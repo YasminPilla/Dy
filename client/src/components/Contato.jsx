@@ -39,7 +39,7 @@ export default function Contato() {
     window.open(link, "_blank", "noopener,noreferrer");
   }
 
-  const err = (f) => (invalid.includes(f) ? { borderBottomColor: "#E06C5B" } : undefined);
+  const err = (f) => (invalid.includes(f) ? { borderBottomColor: "var(--error)" } : undefined);
   const isInvalid = (f) => invalid.includes(f);
 
   return (

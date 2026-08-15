@@ -4,7 +4,7 @@ import { useReveal } from "../hooks/useReveal.js";
 export default function Socios() {
   const ref = useReveal();
   return (
-    <section id="socios" ref={ref}>
+    <section id="socios" className="light" ref={ref}>
       <div className="wrap">
         <div className="head reveal">
           <span className="label">Sobre nós</span>
