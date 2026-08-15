@@ -131,7 +131,7 @@ export default function Contato() {
             <div className="form-success show" role="status">
               Perfeito. <em>Abrimos o WhatsApp com sua mensagem pronta.</em>
               <small>
-                Se não abriu automaticamente, <a href={waHref} target="_blank" rel="noopener noreferrer">clique aqui</a>.
+                Se não abriu automaticamente, <a href={waHref} target="_blank" rel="noopener noreferrer">abra o WhatsApp manualmente</a>.
               </small>
             </div>
           )}

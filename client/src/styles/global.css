@@ -19,7 +19,7 @@
 html{scroll-behavior:smooth}
 body{
   font-family:var(--sans);background:var(--bg);color:var(--text);
-  font-size:15.5px;line-height:1.7;font-weight:300;
+  font-size:16px;line-height:1.7;font-weight:300;
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none}
@@ -58,7 +58,7 @@ section[id]{scroll-margin-top:96px}
   color:var(--blue);display:block;margin-bottom:18px;
 }
 .h2{font-size:clamp(30px,4.4vw,52px);max-width:660px;color:var(--text)}
-.sub{color:var(--muted);font-size:15.5px;max-width:520px;margin-top:16px}
+.sub{color:var(--muted);font-size:16px;max-width:520px;margin-top:16px}
 .head{margin-bottom:clamp(40px,6vw,64px)}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
@@ -177,7 +177,7 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
   margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
   display:flex;gap:12px 0;flex-wrap:wrap;align-items:center;
   font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(148,160,184,.6);
+  color:rgba(148,160,184,.85);
 }
 .hero-tags span{padding:0 17px;position:relative}
 .hero-tags span:first-child{padding-left:0}
@@ -198,7 +198,7 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
 .dor-idx{font-family:var(--display);font-style:italic;color:var(--blue);flex:none;width:1.6em;font-size:15px}
 .dor h3{font-size:clamp(20px,2.1vw,25px);margin-bottom:5px;color:var(--text);transition:color .3s}
 .dor:hover h3{color:var(--blue-2)}
-.dor p{color:var(--muted);font-size:14.5px}
+.dor p{color:var(--muted);font-size:14px}
 .fecho{margin-top:32px;font-family:var(--display);font-size:clamp(22px,2.4vw,28px);color:var(--text)}
 
 /* ---------- atuação ---------- */
@@ -207,7 +207,8 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
   border-bottom:1px solid var(--line);position:relative;
   transition:background .4s;
 }
-.idx-item:hover,.idx-item.open{
+.idx-item:hover,.idx-item.open,
+.faq-item:hover,.faq-item.open{
   background:linear-gradient(90deg, rgba(91,140,255,.07), transparent 65%);
 }
 .idx-btn{
@@ -233,7 +234,7 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
 .idx-item:hover .idx-title{transform:translateX(10px);color:var(--blue-2)}
 .idx-item.open .idx-arrow{transform:rotate(90deg);color:var(--blue)}
 .idx-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.idx-body p{color:var(--muted);font-size:14.5px;max-width:600px;padding:0 clamp(12px,2vw,20px) 26px calc(42px + clamp(16px,3vw,36px) + clamp(12px,2vw,20px))}
+.idx-body p{color:var(--muted);font-size:14px;max-width:600px;padding:0 clamp(12px,2vw,20px) 26px calc(42px + clamp(16px,3vw,36px) + clamp(12px,2vw,20px))}
 .nota{margin-top:24px;font-size:12.5px;color:var(--muted);max-width:560px;opacity:.8}
 
 /* ---------- processo ---------- */
@@ -318,7 +319,6 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
 /* ---------- FAQ ---------- */
 .faq-item{border-bottom:1px solid var(--line);position:relative;transition:background .4s}
 .faq-item:first-of-type{border-top:1px solid var(--line)}
-.faq-item:hover,.faq-item.open{background:linear-gradient(90deg, rgba(91,140,255,.07), transparent 65%)}
 .faq-q{
   width:100%;background:none;border:none;cursor:pointer;text-align:left;
   padding:22px clamp(12px,2vw,20px);display:flex;justify-content:space-between;align-items:center;gap:20px;
@@ -343,7 +343,7 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
   background:radial-gradient(circle, rgba(91,140,255,.12), transparent 60%);pointer-events:none;
 }
 .contato-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(40px,7vw,90px);position:relative;z-index:2}
-.canal{font-size:13.5px;color:var(--muted);margin-top:10px}
+.canal{font-size:14px;color:var(--muted);margin-top:10px}
 .canal a{
   position:relative;color:var(--text);border-bottom:1px solid var(--blue);
   transition:color .3s,padding-right .3s;
@@ -357,8 +357,8 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
 .f{margin-bottom:18px}
 .f--full{grid-column:1/-1}
-.f label{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.f label .opcional{font-weight:400;letter-spacing:0;text-transform:none;color:rgba(148,160,184,.55)}
+.f label{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.f label .opcional{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted)}
 .f input,.f select,.f textarea{
   width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);
   font-family:var(--sans);font-size:14px;color:var(--text);padding:6px 2px 8px;
@@ -390,11 +390,11 @@ footer{background:var(--bg-2);padding:clamp(52px,7vw,72px) 0 30px;border-top:1px
 .foot-base{
   border-top:1px solid var(--line);padding-top:22px;
   display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
-  font-size:11.5px;color:rgba(148,160,184,.55);
+  font-size:12px;color:rgba(148,160,184,.78);
 }
 .to-top{
-  display:inline-flex;align-items:center;gap:8px;color:rgba(148,160,184,.55);
-  font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;color:rgba(148,160,184,.78);
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
   transition:color .3s;
 }
 .to-top svg{transition:transform .3s}
@@ -404,7 +404,7 @@ footer{background:var(--bg-2);padding:clamp(52px,7vw,72px) 0 30px;border-top:1px
 /* ---------- whatsapp ---------- */
 .wa{
   position:fixed;right:22px;bottom:22px;z-index:90;
-  width:56px;height:56px;border-radius:50%;
+  width:56px;height:56px;border-radius:50%;color:#8FB0FF;
   background:var(--bg-3);border:1px solid rgba(91,140,255,.45);
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 14px 30px -14px rgba(0,0,0,.6);

@@ -16,6 +16,15 @@ describe("Accordion", () => {
     }
   });
 
+  it("associa cada botão ao seu painel via aria-controls", () => {
+    render(<Accordion items={ITEMS} variant="faq" />);
+    for (const btn of screen.getAllByRole("button")) {
+      const panelId = btn.getAttribute("aria-controls");
+      expect(panelId).toBeTruthy();
+      expect(document.getElementById(panelId)).not.toBeNull();
+    }
+  });
+
   it("abre um item ao clicar e fecha ao clicar novamente", async () => {
     const user = userEvent.setup();
     render(<Accordion items={ITEMS} variant="faq" />);

@@ -18,51 +18,61 @@ export default function Accordion({ items, variant = "faq" }) {
   if (variant === "idx") {
     return (
       <ul className="idx reveal">
-        {items.map((it, i) => (
-          <li key={it.title} className={`idx-item ${open === i ? "open" : ""}`}>
-            <button
-              className="idx-btn"
-              aria-expanded={open === i}
-              onClick={() => setOpen(open === i ? null : i)}
-            >
-              <span className="idx-num">{it.num}</span>
-              <span className="idx-title">{it.title}</span>
-              <span className="idx-arrow">→</span>
-            </button>
-            <div
-              className="idx-body"
-              ref={(el) => (refs.current[i] = el)}
-              style={{ maxHeight: open === i ? refs.current[i]?.scrollHeight : 0 }}
-            >
-              <p>{it.body}</p>
-            </div>
-          </li>
-        ))}
+        {items.map((it, i) => {
+          const panelId = `idx-panel-${i}`;
+          return (
+            <li key={it.title} className={`idx-item ${open === i ? "open" : ""}`}>
+              <button
+                className="idx-btn"
+                aria-expanded={open === i}
+                aria-controls={panelId}
+                onClick={() => setOpen(open === i ? null : i)}
+              >
+                <span className="idx-num" aria-hidden="true">{it.num}</span>
+                <span className="idx-title">{it.title}</span>
+                <span className="idx-arrow" aria-hidden="true">→</span>
+              </button>
+              <div
+                id={panelId}
+                className="idx-body"
+                ref={(el) => (refs.current[i] = el)}
+                style={{ maxHeight: open === i ? refs.current[i]?.scrollHeight : 0 }}
+              >
+                <p>{it.body}</p>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     );
   }
 
   return (
     <div className="reveal">
-      {items.map((it, i) => (
-        <div key={it.title} className={`faq-item ${open === i ? "open" : ""}`}>
-          <button
-            className="faq-q"
-            aria-expanded={open === i}
-            onClick={() => setOpen(open === i ? null : i)}
-          >
-            {it.title}
-            <span className="sig">+</span>
-          </button>
-          <div
-            className="faq-a"
-            ref={(el) => (refs.current[i] = el)}
-            style={{ maxHeight: open === i ? refs.current[i]?.scrollHeight : 0 }}
-          >
-            <p>{it.body}</p>
+      {items.map((it, i) => {
+        const panelId = `faq-panel-${i}`;
+        return (
+          <div key={it.title} className={`faq-item ${open === i ? "open" : ""}`}>
+            <button
+              className="faq-q"
+              aria-expanded={open === i}
+              aria-controls={panelId}
+              onClick={() => setOpen(open === i ? null : i)}
+            >
+              {it.title}
+              <span className="sig" aria-hidden="true">+</span>
+            </button>
+            <div
+              id={panelId}
+              className="faq-a"
+              ref={(el) => (refs.current[i] = el)}
+              style={{ maxHeight: open === i ? refs.current[i]?.scrollHeight : 0 }}
+            >
+              <p>{it.body}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
