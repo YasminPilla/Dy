@@ -3,17 +3,16 @@ import CircleButton from "./CircleButton.jsx";
 import { config, waLink, whatsappGeral } from "../config.js";
 import { useReveal } from "../hooks/useReveal.js";
 
-const INITIAL = { nome: "", empresa: "", email: "", whatsapp: "", tipo: "", descricao: "" };
+const INITIAL = { nome: "", empresa: "", email: "", tipo: "", descricao: "" };
 
 function montarMensagem(form) {
   const linhas = [
     "Olá! Vim pelo site e gostaria de conversar:",
     "",
     `Nome: ${form.nome}`,
-    `Empresa: ${form.empresa}`,
     `E-mail: ${form.email}`,
   ];
-  if (form.whatsapp.trim()) linhas.push(`WhatsApp: ${form.whatsapp.trim()}`);
+  if (form.empresa.trim()) linhas.push(`Empresa: ${form.empresa.trim()}`);
   if (form.tipo) linhas.push(`Tipo de necessidade: ${form.tipo}`);
   if (form.descricao.trim()) linhas.push("", `Desafio: ${form.descricao.trim()}`);
   return linhas.join("\n");
@@ -31,7 +30,6 @@ export default function Contato() {
     e.preventDefault();
     const errors = [];
     if (!form.nome.trim()) errors.push("nome");
-    if (!form.empresa.trim()) errors.push("empresa");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) errors.push("email");
     setInvalid(errors);
     if (errors.length) return;
@@ -86,22 +84,6 @@ export default function Contato() {
             )}
           </div>
           <div className="f">
-            <label htmlFor="f-empresa">Empresa</label>
-            <input
-              id="f-empresa"
-              type="text"
-              autoComplete="organization"
-              value={form.empresa}
-              onChange={set("empresa")}
-              style={err("empresa")}
-              aria-invalid={isInvalid("empresa")}
-              aria-describedby={isInvalid("empresa") ? "f-empresa-erro" : undefined}
-            />
-            {isInvalid("empresa") && (
-              <span id="f-empresa-erro" className="f-erro" role="alert">Informe o nome da empresa.</span>
-            )}
-          </div>
-          <div className="f">
             <label htmlFor="f-email">E-mail</label>
             <input
               id="f-email"
@@ -118,13 +100,19 @@ export default function Contato() {
             )}
           </div>
           <div className="f">
-            <label htmlFor="f-whats">WhatsApp</label>
-            <input id="f-whats" type="tel" autoComplete="tel" placeholder="(11) 90000-0000" value={form.whatsapp} onChange={set("whatsapp")} />
+            <label htmlFor="f-empresa">Empresa <span className="opcional">(opcional)</span></label>
+            <input
+              id="f-empresa"
+              type="text"
+              autoComplete="organization"
+              value={form.empresa}
+              onChange={set("empresa")}
+            />
           </div>
-          <div className="f f--full">
-            <label htmlFor="f-tipo">Tipo de necessidade</label>
+          <div className="f">
+            <label htmlFor="f-tipo">Tipo de necessidade <span className="opcional">(opcional)</span></label>
             <select id="f-tipo" value={form.tipo} onChange={set("tipo")}>
-              <option value="" disabled>Selecione</option>
+              <option value="">Selecione</option>
               <option>Acesso a clientes</option>
               <option>Desenvolvimento de negócios</option>
               <option>Negociação</option>
@@ -135,7 +123,7 @@ export default function Contato() {
             </select>
           </div>
           <div className="f f--full">
-            <label htmlFor="f-desc">Breve descrição do desafio</label>
+            <label htmlFor="f-desc">Breve descrição do desafio <span className="opcional">(opcional)</span></label>
             <textarea id="f-desc" placeholder="Em poucas linhas, o que você está tentando alcançar." value={form.descricao} onChange={set("descricao")} />
           </div>
           <div className="f-actions">
