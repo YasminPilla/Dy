@@ -15,7 +15,7 @@ export default function Hero() {
           Entramos onde sua empresa <em>precisa chegar</em>.
         </h1>
         <p className="reveal" style={{ transitionDelay: ".2s" }}>
-          Acesso a clientes, negociações e relacionamentos estratégicos — da primeira
+          Acesso a clientes, negociações e relacionamentos de alto nível — da primeira
           conversa ao acordo.
         </p>
         <div className="hero-ctas reveal" style={{ transitionDelay: ".3s" }}>

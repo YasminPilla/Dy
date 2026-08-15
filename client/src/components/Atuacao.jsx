@@ -4,10 +4,10 @@ import { useReveal } from "../hooks/useReveal.js";
 const FRENTES = [
   { num: "01", title: "Acesso a clientes", body: "Abrimos a porta certa: aproximação direta com clientes e decisores estratégicos." },
   { num: "02", title: "Desenvolvimento de negócios", body: "Identificamos oportunidades reais e estruturamos o caminho até o negócio fechado." },
-  { num: "03", title: "Negociações estratégicas", body: "Preparação, interlocução e condução das negociações que mais importam." },
-  { num: "04", title: "Contratos & acordos", body: "Apoio estratégico em contratos e acordos comerciais, em conjunto com os profissionais jurídicos responsáveis." },
-  { num: "05", title: "Relacionamentos estratégicos", body: "Aproximamos empresas, investidores e parceiros quando há sinergia real." },
-  { num: "06", title: "Representação estratégica", body: "Atuamos como extensão da sua empresa onde, sozinha, ela ainda não consegue chegar." },
+  { num: "03", title: "Negociações", body: "Preparação, interlocução e condução das negociações que mais importam." },
+  { num: "04", title: "Contratos & acordos", body: "Apoio em contratos e acordos comerciais, ao lado dos profissionais jurídicos responsáveis." },
+  { num: "05", title: "Relacionamentos", body: "Aproximamos empresas, investidores e parceiros quando há sinergia real." },
+  { num: "06", title: "Representação", body: "Atuamos como extensão da sua empresa onde, sozinha, ela ainda não consegue chegar." },
 ];
 
 export default function Atuacao() {

@@ -4,7 +4,7 @@ const DORES = [
   { t: "O decisor está fora de alcance", d: "Você tem a solução, mas não a porta de entrada." },
   { t: "A negociação travou", d: "Falta estratégia e alguém experiente ao lado." },
   { t: "A oportunidade existe", d: "O caminho até o negócio ainda não existe." },
-  { t: "O relacionamento não avança", d: "Sem direção estratégica, ele estaciona." },
+  { t: "O relacionamento não avança", d: "Sem direção clara, ele estaciona." },
 ];
 
 export default function Problema() {

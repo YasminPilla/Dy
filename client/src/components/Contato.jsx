@@ -13,7 +13,7 @@ function montarMensagem(form) {
     `E-mail: ${form.email}`,
   ];
   if (form.empresa.trim()) linhas.push(`Empresa: ${form.empresa.trim()}`);
-  if (form.tipo) linhas.push(`Tipo de necessidade: ${form.tipo}`);
+  if (form.tipo) linhas.push(`Motivo do contato: ${form.tipo}`);
   if (form.descricao.trim()) linhas.push("", `Desafio: ${form.descricao.trim()}`);
   return linhas.join("\n");
 }
@@ -110,15 +110,13 @@ export default function Contato() {
             />
           </div>
           <div className="f">
-            <label htmlFor="f-tipo">Tipo de necessidade <span className="opcional">(opcional)</span></label>
+            <label htmlFor="f-tipo">Como podemos ajudar? <span className="opcional">(opcional)</span></label>
             <select id="f-tipo" value={form.tipo} onChange={set("tipo")}>
               <option value="">Selecione</option>
-              <option>Acesso a clientes</option>
-              <option>Desenvolvimento de negócios</option>
-              <option>Negociação</option>
-              <option>Contrato / acordo comercial</option>
-              <option>Parceria estratégica</option>
-              <option>Representação</option>
+              <option>Tenho uma oportunidade para apresentar</option>
+              <option>Preciso de acesso a um cliente ou decisor</option>
+              <option>Estou em uma negociação e preciso de apoio</option>
+              <option>Quero entender se faz sentido conversar</option>
               <option>Outro</option>
             </select>
           </div>
