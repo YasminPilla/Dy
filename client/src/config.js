@@ -29,5 +29,5 @@ export const config = {
   ],
 };
 
-export const waLink = (numero = config.whatsapp) =>
-  `https://wa.me/${numero}?text=${encodeURIComponent(config.whatsappMsg)}`;
+export const waLink = (numero = config.whatsapp, mensagem = config.whatsappMsg) =>
+  `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;

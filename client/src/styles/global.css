@@ -333,16 +333,16 @@ header.scrolled{background:rgba(10,14,25,.85);backdrop-filter:blur(14px);border-
   transition:opacity .3s,transform .3s;transform:translateX(-6px);
 }
 .canal a:hover::after{opacity:1;transform:translateX(4px)}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;align-items:start}
-.f{margin-bottom:28px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
+.f{margin-bottom:18px}
 .f--full{grid-column:1/-1}
-.f label{display:block;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.f label{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .f input,.f select,.f textarea{
   width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);
-  font-family:var(--sans);font-size:15px;color:var(--text);padding:9px 2px 11px;
+  font-family:var(--sans);font-size:14px;color:var(--text);padding:6px 2px 8px;
   transition:border-color .3s;border-radius:0;appearance:none;font-weight:300;
 }
-.f textarea{min-height:80px;resize:vertical}
+.f textarea{min-height:56px;resize:vertical}
 .f-erro{display:block;font-size:12px;color:#E06C5B;margin-top:8px;line-height:1.4}
 .f ::placeholder{color:rgba(148,160,184,.5)}
 .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:var(--blue);box-shadow:0 6px 16px -12px rgba(91,140,255,.6)}

@@ -5,15 +5,29 @@ import { useReveal } from "../hooks/useReveal.js";
 
 const INITIAL = { nome: "", empresa: "", email: "", whatsapp: "", tipo: "", descricao: "" };
 
+function montarMensagem(form) {
+  const linhas = [
+    "Olá! Vim pelo site e gostaria de conversar:",
+    "",
+    `Nome: ${form.nome}`,
+    `Empresa: ${form.empresa}`,
+    `E-mail: ${form.email}`,
+  ];
+  if (form.whatsapp.trim()) linhas.push(`WhatsApp: ${form.whatsapp.trim()}`);
+  if (form.tipo) linhas.push(`Tipo de necessidade: ${form.tipo}`);
+  if (form.descricao.trim()) linhas.push("", `Desafio: ${form.descricao.trim()}`);
+  return linhas.join("\n");
+}
+
 export default function Contato() {
   const ref = useReveal();
   const [form, setForm] = useState(INITIAL);
-  const [status, setStatus] = useState("idle"); // idle | sending | ok | error
   const [invalid, setInvalid] = useState([]);
+  const [waHref, setWaHref] = useState(null);
 
   const set = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     const errors = [];
     if (!form.nome.trim()) errors.push("nome");
@@ -22,18 +36,9 @@ export default function Contato() {
     setInvalid(errors);
     if (errors.length) return;
 
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error();
-      setStatus("ok");
-    } catch {
-      setStatus("error");
-    }
+    const link = waLink(config.whatsapp, montarMensagem(form));
+    setWaHref(link);
+    window.open(link, "_blank", "noopener,noreferrer");
   }
 
   const err = (f) => (invalid.includes(f) ? { borderBottomColor: "#E06C5B" } : undefined);
@@ -134,20 +139,14 @@ export default function Contato() {
             <textarea id="f-desc" placeholder="Em poucas linhas, o que você está tentando alcançar." value={form.descricao} onChange={set("descricao")} />
           </div>
           <div className="f-actions">
-            <CircleButton type="submit" variant="blue" disabled={status === "sending" || status === "ok"}>
-              {status === "sending" ? "Enviando…" : "Enviar solicitação"}
-            </CircleButton>
+            <CircleButton type="submit" variant="blue">Enviar pelo WhatsApp</CircleButton>
           </div>
-          {status === "ok" && (
+          {waHref && (
             <div className="form-success show" role="status">
-              Recebido. <em>Obrigado pelo contato.</em>
-              <small>Entraremos em contato para entender melhor o seu cenário.</small>
-            </div>
-          )}
-          {status === "error" && (
-            <div className="form-success show" role="alert" style={{ borderLeftColor: "#E06C5B" }}>
-              Não foi possível enviar.
-              <small>Tente novamente ou fale conosco pelo WhatsApp.</small>
+              Perfeito. <em>Abrimos o WhatsApp com sua mensagem pronta.</em>
+              <small>
+                Se não abriu automaticamente, <a href={waHref} target="_blank" rel="noopener noreferrer">clique aqui</a>.
+              </small>
             </div>
           )}
         </form>
