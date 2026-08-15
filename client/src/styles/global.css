@@ -1,6 +1,6 @@
 :root{
   --bg:#0A0E19;
-  --bg-2:#0E1524;
+  --bg-2:#111A2C;
   --bg-3:#141D33;
   --text:#E9EDF5;
   --muted:#94A0B8;
@@ -34,17 +34,19 @@ section{padding:var(--gap) 0}
 section[id]{scroll-margin-top:96px}
 .alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
-/* seção clara — quebra o ritmo do fundo escuro para dar respiro e destaque */
+/* seção clara — quebra o ritmo do fundo escuro para dar respiro e destaque.
+   Tom frio (parente claro do azul-marinho do resto do site, não um branco puro),
+   pra não estourar contraste nem destoar da paleta. */
 .light{
-  --bg:#F5F1E8;
-  --bg-2:#ECE5D5;
-  --text:#181A22;
-  --muted:#5B5F6E;
-  --line:rgba(24,26,34,.12);
-  --blue:#3454C7;
-  --blue-2:#1F3AA0;
-  --blue-dim:rgba(52,84,199,.08);
-  --error:#C0392B;
+  --bg:#E7EAF2;
+  --bg-2:#DCE0EC;
+  --text:#151A2C;
+  --muted:#565E76;
+  --line:rgba(21,26,44,.12);
+  --blue:#3C5CD6;
+  --blue-2:#25409F;
+  --blue-dim:rgba(60,92,214,.08);
+  --error:#B3402F;
   background:var(--bg);color:var(--text);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
 }

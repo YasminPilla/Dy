@@ -43,7 +43,7 @@ export default function Contato() {
   const isInvalid = (f) => invalid.includes(f);
 
   return (
-    <section className="contato" id="contato" ref={ref}>
+    <section className="contato light" id="contato" ref={ref}>
       <div className="wrap contato-grid">
         <div className="reveal">
           <span className="label">Vamos conversar?</span>
