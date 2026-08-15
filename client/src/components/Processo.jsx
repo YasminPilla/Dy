@@ -10,7 +10,7 @@ const PASSOS = [
 export default function Processo() {
   const ref = useReveal();
   return (
-    <section id="processo" ref={ref}>
+    <section id="processo" className="light" ref={ref}>
       <div className="wrap">
         <div className="head reveal">
           <span className="label">Como trabalhamos</span>
