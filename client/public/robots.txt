@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.dyassistent.com.br/sitemap.xml
+Sitemap: https://yasminpilla.github.io/Dy/sitemap.xml
