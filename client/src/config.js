@@ -1,7 +1,7 @@
 // Configurações editáveis do site
 export const config = {
   empresa: "Dy Assistent",
-  whatsapp: "5511964918084", // formato: 55 + DDD + número — usado nos contatos gerais do site
+  whatsapp: "5511939617574", // formato: 55 + DDD + número — usado nos contatos gerais do site
   whatsappMsg:
     "Olá, gostaria de conhecer melhor o trabalho da Dy Assistent e conversar sobre uma oportunidade.",
   email: "[E-MAIL DA EMPRESA]",
@@ -12,7 +12,7 @@ export const config = {
       cargo: "Sócio · Diretor",
       bio: "[EXPERIÊNCIA, SETORES E PRINCIPAIS COMPETÊNCIAS — 2 a 3 linhas.]",
       foto: null, // ex.: "/socio1.jpg" (coloque a imagem em client/public)
-      whatsapp: "5511964918084",
+      whatsapp: "5511939617574",
     },
     {
       nome: "Diogo Zura",
