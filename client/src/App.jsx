@@ -9,10 +9,12 @@ import Faq from "./components/Faq.jsx";
 import Contato from "./components/Contato.jsx";
 import Footer from "./components/Footer.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
+import ScrollProgress from "./components/ScrollProgress.jsx";
 
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Header />
       <main id="conteudo">
         <Hero />
