@@ -5,5 +5,5 @@ const PORT = process.env.PORT || 3001;
 const app = createApp();
 
 app.listen(PORT, () => {
-  console.log(`Dy Assistent server rodando em http://localhost:${PORT}`);
+  console.log(`Dy Negócios server rodando em http://localhost:${PORT}`);
 });

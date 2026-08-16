@@ -1,8 +1,8 @@
 // Configurações editáveis do site
 export const config = {
-  empresa: "Dy Assistent",
+  empresa: "Dy Negócios",
   whatsappMsg:
-    "Olá, gostaria de conhecer melhor o trabalho da Dy Assistent e conversar sobre uma oportunidade.",
+    "Olá, gostaria de conhecer melhor o trabalho da Dy Negócios e conversar sobre uma oportunidade.",
   email: "[E-MAIL DA EMPRESA]",
   linkedin: "", // ex.: "https://www.linkedin.com/company/..." — deixe vazio para ocultar o link
   socios: [

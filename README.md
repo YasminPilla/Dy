@@ -1,4 +1,4 @@
-# Dy Assistent — Site institucional
+# Dy Negócios — Site institucional
 
 Frontend em **React (Vite)** + backend em **Node/Express**.
 

@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="foot-brand">
             <a className="logo" href="#inicio">
               <span className="dy">Dy</span>
-              <span className="rest">Assistent</span>
+              <span className="rest">Negócios</span>
             </a>
             <p>Da primeira conversa <em>ao acordo</em>.</p>
           </div>

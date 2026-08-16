@@ -43,7 +43,7 @@ export default function Header() {
         <nav className="nav" aria-label="Navegação principal">
           <a className="logo" href="#inicio">
             <span className="dy">Dy</span>
-            <span className="rest">Assistent</span>
+            <span className="rest">Negócios</span>
           </a>
           <ul className="nav-links">
             {LINKS.map((l) => (

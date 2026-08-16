@@ -2,7 +2,7 @@
   "name": "dy-assistent",
   "private": true,
   "version": "1.0.0",
-  "description": "Site institucional Dy Assistent — React (client) + Node/Express (server)",
+  "description": "Site institucional Dy Negócios — React (client) + Node/Express (server)",
   "scripts": {
     "install:all": "npm install --prefix server && npm install --prefix client",
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",

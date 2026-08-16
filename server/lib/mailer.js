@@ -28,7 +28,7 @@ export async function sendLeadEmail(lead) {
 
   const transporter = await getTransporter();
   await transporter.sendMail({
-    from: process.env.SMTP_FROM || `"Site Dy Assistent" <${process.env.SMTP_USER}>`,
+    from: process.env.SMTP_FROM || `"Site Dy Negócios" <${process.env.SMTP_USER}>`,
     to,
     replyTo: lead.email,
     subject: `Novo contato — ${lead.nome} (${lead.empresa})`,
