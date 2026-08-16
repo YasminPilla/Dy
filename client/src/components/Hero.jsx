@@ -5,25 +5,46 @@ import { useReveal } from "../hooks/useReveal.js";
 export default function Hero() {
   const ref = useReveal();
 
-  // Brilho de fundo segue o mouse bem de leve — só um toque de vida, sem exagero.
+  // Brilho de fundo reage ao gesto do visitante — mouse no desktop, scroll no
+  // celular (onde não existe cursor) — só um toque de vida, sem exagero.
   useEffect(() => {
     const el = ref.current;
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = null;
-    const onMove = (e) => {
+    const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (hasMouse) {
+      const onMove = (e) => {
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+          const r = el.getBoundingClientRect();
+          const mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+          const my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+          el.style.setProperty("--mx", (mx * 14).toFixed(1));
+          el.style.setProperty("--my", (my * 14).toFixed(1));
+          frame = null;
+        });
+      };
+      el.addEventListener("mousemove", onMove);
+      return () => {
+        el.removeEventListener("mousemove", onMove);
+        if (frame) cancelAnimationFrame(frame);
+      };
+    }
+
+    const onScroll = () => {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         const r = el.getBoundingClientRect();
-        const mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-        const my = ((e.clientY - r.top) / r.height - 0.5) * 2;
-        el.style.setProperty("--mx", (mx * 14).toFixed(1));
-        el.style.setProperty("--my", (my * 14).toFixed(1));
+        const p = Math.min(Math.max(-r.top / (r.height || 1), 0), 1);
+        el.style.setProperty("--mx", (p * 16 - 8).toFixed(1));
+        el.style.setProperty("--my", (p * -10).toFixed(1));
         frame = null;
       });
     };
-    el.addEventListener("mousemove", onMove);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      el.removeEventListener("mousemove", onMove);
+      window.removeEventListener("scroll", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
   }, [ref]);
