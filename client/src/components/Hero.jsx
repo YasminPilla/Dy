@@ -56,21 +56,21 @@ export default function Hero() {
         <span /><span /><span /><span />
       </div>
       <div className="wrap hero-in">
-        <span className="label reveal">Consultoria empresarial estratégica</span>
+        <span className="label reveal">Consultoria para pequenos negócios e profissionais autônomos</span>
         <h1 className="reveal" style={{ transitionDelay: ".1s" }}>
-          Entramos onde sua empresa <em>precisa chegar</em>.
+          Ajudamos seu negócio a <em>dar o próximo passo</em>.
         </h1>
         <p className="reveal" style={{ transitionDelay: ".2s" }}>
-          Acesso a clientes, negociações e relacionamentos de alto nível — da primeira
-          conversa ao acordo.
+          Consultoria, site profissional e apoio em negociações — para quem quer
+          crescer com estrutura, do primeiro contato ao resultado.
         </p>
         <div className="hero-ctas reveal" style={{ transitionDelay: ".3s" }}>
           <CircleButton href="#contato" variant="blue">Agendar uma conversa</CircleButton>
           <CircleButton href="#atuacao" direction="down">Nossa atuação</CircleButton>
         </div>
         <div className="hero-tags reveal" style={{ transitionDelay: ".4s" }}>
-          <span>Estratégia</span><span>Relacionamento</span>
-          <span>Negociação</span><span>Confidencialidade</span>
+          <span>Consultoria</span><span>Sites</span>
+          <span>Negociação</span><span>Acompanhamento</span>
         </div>
       </div>
     </section>

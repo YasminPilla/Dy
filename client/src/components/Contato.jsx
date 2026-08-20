@@ -48,14 +48,16 @@ export default function Contato() {
         <div className="reveal">
           <span className="label">Vamos conversar?</span>
           <h2 className="h2">
-            Existe uma oportunidade que você precisa <em>fazer acontecer?</em>
+            Tem algo no seu negócio que você precisa <em>fazer acontecer?</em>
           </h2>
           <p className="sub">
             Conte o que você está tentando alcançar. Sem compromisso e com total discrição.
           </p>
-          <p className="canal" style={{ marginTop: 30 }}>
-            E-mail — <a href={`mailto:${config.email}`}>{config.email}</a>
-          </p>
+          {config.email && (
+            <p className="canal" style={{ marginTop: 30 }}>
+              E-mail — <a href={`mailto:${config.email}`}>{config.email}</a>
+            </p>
+          )}
           <p className="canal">
             WhatsApp — <a href={waLink()} target="_blank" rel="noopener noreferrer">Falar com um sócio</a>
           </p>
@@ -113,8 +115,8 @@ export default function Contato() {
             <label htmlFor="f-tipo">Como podemos ajudar? <span className="opcional">(opcional)</span></label>
             <select id="f-tipo" value={form.tipo} onChange={set("tipo")}>
               <option value="">Selecione</option>
-              <option>Tenho uma oportunidade para apresentar</option>
-              <option>Preciso de acesso a um cliente ou decisor</option>
+              <option>Quero um site para o meu negócio</option>
+              <option>Preciso de consultoria para crescer</option>
               <option>Estou em uma negociação e preciso de apoio</option>
               <option>Quero entender se faz sentido conversar</option>
               <option>Outro</option>

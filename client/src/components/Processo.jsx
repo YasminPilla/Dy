@@ -1,10 +1,10 @@
 import { useReveal } from "../hooks/useReveal.js";
 
 const PASSOS = [
-  { n: "i", t: "Entendemos", d: "O negócio, o contexto e o que realmente precisa ser resolvido." },
-  { n: "ii", t: "Mapeamos", d: "Pessoas, empresas, caminhos e obstáculos." },
-  { n: "iii", t: "Conectamos", d: "Criamos as aproximações necessárias para avançar." },
-  { n: "iv", t: "Conduzimos", d: "Acompanhamos até virar negociação, parceria ou negócio." },
+  { n: "i", t: "Entendemos", d: "O negócio, o momento e o que realmente precisa ser resolvido." },
+  { n: "ii", t: "Planejamos", d: "O caminho: consultoria, site, negociação — o que fizer sentido pro caso." },
+  { n: "iii", t: "Executamos", d: "Colocamos a mão na massa, do site à negociação." },
+  { n: "iv", t: "Acompanhamos", d: "Seguimos ao lado até o resultado aparecer." },
 ];
 
 export default function Processo() {

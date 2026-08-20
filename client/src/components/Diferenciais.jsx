@@ -1,11 +1,11 @@
 import { useReveal } from "../hooks/useReveal.js";
 
 const DIFS = [
-  { k: "a.", t: "Relacionamento", d: "Interlocução com diferentes perfis de decisores e empresas." },
-  { k: "b.", t: "Visão de negócio", d: "Cada negociação avaliada dentro do contexto do negócio." },
-  { k: "c.", t: "Proximidade", d: "Os sócios participam diretamente. Sem camadas." },
-  { k: "d.", t: "Discrição", d: "Cada informação tratada com sigilo absoluto." },
-  { k: "e.", t: "Execução", d: "Não terminamos na recomendação. Seguimos até o resultado." },
+  { k: "a.", t: "Proximidade", d: "Os sócios participam diretamente de cada projeto. Sem camadas." },
+  { k: "b.", t: "Sob medida", d: "Sem pacote fechado. Cada negócio recebe o que realmente precisa." },
+  { k: "c.", t: "Visão de negócio", d: "Cada solução pensada dentro da realidade e do momento do cliente." },
+  { k: "d.", t: "Discrição", d: "Cada informação do seu negócio tratada com sigilo." },
+  { k: "e.", t: "Execução", d: "Não paramos na recomendação. Ajudamos a colocar em prática." },
 ];
 
 export default function Diferenciais() {

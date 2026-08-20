@@ -10,7 +10,7 @@ export default function Footer() {
               <span className="dy">Dy</span>
               <span className="rest">Negócios</span>
             </a>
-            <p>Da primeira conversa <em>ao acordo</em>.</p>
+            <p>Do primeiro contato <em>ao resultado</em>.</p>
           </div>
           <div className="foot-cols">
             <div className="foot-col">
@@ -22,7 +22,9 @@ export default function Footer() {
             </div>
             <div className="foot-col">
               <h4>Contato</h4>
-              <a href={`mailto:${config.email}`}>{config.email}</a>
+              {config.email && (
+                <a href={`mailto:${config.email}`}>{config.email}</a>
+              )}
               <a href={waLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
               {config.linkedin && (
                 <a href={config.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>

@@ -1,10 +1,10 @@
 import { useReveal } from "../hooks/useReveal.js";
 
 const DORES = [
-  { t: "O decisor está fora de alcance", d: "Você tem a solução, mas não a porta de entrada." },
-  { t: "A negociação travou", d: "Falta estratégia e alguém experiente ao lado." },
-  { t: "A oportunidade existe", d: "O caminho até o negócio ainda não existe." },
-  { t: "O relacionamento não avança", d: "Sem direção clara, ele estaciona." },
+  { t: "Falta uma presença profissional", d: "O trabalho é bom, mas ainda não existe um site que passe confiança." },
+  { t: "Não sabe por onde começar", d: "Tem talento e clientes, falta direção pra crescer com estrutura." },
+  { t: "Negociar sozinho é mais difícil", d: "Fechar parcerias, contratos e fornecedores pesa sem apoio." },
+  { t: "O dia a dia toma conta", d: "Tocar o negócio sozinho deixa pouco espaço pra pensar no crescimento." },
 ];
 
 export default function Problema() {
@@ -14,7 +14,7 @@ export default function Problema() {
       <div className="wrap grid2">
         <div className="reveal">
           <span className="label">O problema</span>
-          <h2 className="h2">Nem sempre o problema é a oportunidade. É chegar até ela.</h2>
+          <h2 className="h2">Nem sempre falta talento. Falta estrutura pra crescer.</h2>
           <p className="fecho">É nesse espaço que <em>atuamos</em>.</p>
         </div>
         <div className="reveal">
